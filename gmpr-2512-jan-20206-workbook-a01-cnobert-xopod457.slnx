@@ -1,3 +1,5 @@
 ﻿<Solution>
+  <Project Path="Assembly-CSharp.csproj" />
   <Project Path="GMPR2512.Lesson01.csproj" />
+  <Project Path="GMPR2512.Lesson02.csproj" />
 </Solution>
