@@ -8,12 +8,33 @@ namespace GMPR2512.Lesson07TransformAndInput
     {
         [SerializeField] private float _moveSpeed = 5, _rotationSpeed = 200, _scaleSpeed = 1.2f;
         [SerializeField] private float _minRotation = -25, _maxRotation = 25;
-        private InputAction _moveAction, _rotateAction, _scaleAction;
+
+        [SerializeField] private GameObject _projectilePrefab;
+        private InputAction _moveAction, _rotateAction, _scaleAction, _fireAction;
         void Awake()
         {
             _moveAction = InputSystem.actions.FindAction("Player/Move");
             _rotateAction = InputSystem.actions.FindAction("Player/Rotate");
             _scaleAction = InputSystem.actions.FindAction("Player/Scale");
+            _fireAction = InputSystem.actions.FindAction("Player/Jump");
+        }
+        void OnEnable()
+        {
+            _moveAction?.Enable();
+            _rotateAction?.Enable();
+            _scaleAction?.Enable();
+            if(_fireAction != null)
+            {
+                _fireAction?.Enable();
+                _fireAction.performed += FireButtonPressed;
+                _fireAction.canceled += FireButtonReleased;
+            }
+        }
+        void OnDisable()
+        {
+            _moveAction?.Disable();
+            _rotateAction?.Disable();
+            _scaleAction?.Disable();
         }
         void Update()
         {
@@ -54,6 +75,22 @@ namespace GMPR2512.Lesson07TransformAndInput
             transform.localScale = scale;
             
             #endregion
+
+        }
+        void FireButtonPressed(InputAction.CallbackContext context)
+        {
+            Vector3 projectileStartPosition = transform.GetChild(0).position;
+            GameObject theProjectile = Instantiate(_projectilePrefab, projectileStartPosition, transform.rotation);
+            Projectile projectileScript = theProjectile.GetComponent<Projectile>();
+            projectileScript.Speed = 5;
+            projectileScript.Direction = transform.up;
+
+
+        }
+        void FireButtonReleased(InputAction.CallbackContext context)
+        {
+            
+
         }
     }
 }

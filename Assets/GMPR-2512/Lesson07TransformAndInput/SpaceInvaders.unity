@@ -154,6 +154,7 @@ MonoBehaviour:
   _scaleSpeed: 1.2
   _minRotation: -25
   _maxRotation: 25
+  _projectilePrefab: {fileID: 1619616280310911669, guid: b89d7549e24a21b42a9150ccef7623ae, type: 3}
 --- !u!212 &1588304032
 SpriteRenderer:
   serializedVersion: 2
@@ -203,7 +204,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  m_Sprite: {fileID: -7042772139331670543, guid: fc20c68c466f46d478a504cbace1a248, type: 3}
   m_Color: {r: 0, g: 0.23225996, b: 0.9433962, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -222,10 +223,11 @@ Transform:
   m_GameObject: {fileID: 1588304030}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.67, y: -4.24, z: 0}
-  m_LocalScale: {x: 0.6564, y: 2.0669, z: 1}
+  m_LocalPosition: {x: -7.8517, y: -3.9844, z: 0}
+  m_LocalScale: {x: 0.2837356, y: 0.30475846, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2093391815}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2059826973
@@ -319,6 +321,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2093391814
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2093391815}
+  m_Layer: 0
+  m_Name: Projectile Spawn Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2093391815
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2093391814}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 3.84, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1588304033}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
