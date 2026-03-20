@@ -1,0 +1,31 @@
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
+
+namespace GMPR2512.Lesson08ScenesAndUI
+{
+    public class Scene00ButtonHandler : MonoBehaviour
+    {
+        private Button _changeToScene01Button;
+        private void OnEnable()
+        {
+            VisualElement root = GetComponent<UIDocument>().rootVisualElement;
+            _changeToScene01Button = root.Q<Button>("ChangeToScene01Button");
+            if(_changeToScene01Button != null)
+                _changeToScene01Button.clicked += ChangeToScene01;
+        }
+        private void Oisable()
+        {
+                        if(_changeToScene01Button != null)
+                _changeToScene01Button.clicked -= ChangeToScene01;
+        }
+
+        private void ChangeToScene01()
+        {
+            //Debug.Log("Button Cliked");
+            SceneManager.LoadScene(1);
+
+        }
+    } 
+}
+
